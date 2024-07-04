@@ -1,0 +1,41 @@
+[package]
+name = "wtux"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# utilities
+pollster = "0.3.0"
+bytemuck = { version = "1.13.1", features = ["derive"]}
+cgmath = "0.18"
+rand = "0.8.5"
+
+# error handling - debugging
+log = "0.4.17"
+env_logger = "0.10.0"
+crossterm = "0.26.1"
+anyhow = "1.0.70"
+thiserror = "1.0.40"
+debugit = "0.2.0"
+
+# core
+winit = "0.28.3"
+wgpu = "0.15.1"
+tobj = { version = "3.2.1", features = ["async"]}
+fbxcel-dom = "0.0.10"
+rodio = "0.17.1"
+#egui_wgpu_backend = "0.23.0"
+#egui_winit_platform = "0.18.0"
+
+image = "0.24"
+eframe = "0.21.0"
+egui = "0.21.0"
+[dependecies.image]
+version = "0.24"
+default_features = false
+features = ["png", "jpeg"]
+
+

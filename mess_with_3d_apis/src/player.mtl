@@ -1,0 +1,14 @@
+# Blender MTL File: 'ar.blend'
+# Material Count: 1
+
+newmtl Arm01
+Ns 303.134208
+Ka 0.496454 0.496454 0.496454
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump  armnormal.png
+map_Kd armColor.png

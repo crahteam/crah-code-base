@@ -1,0 +1,106 @@
+use image::{
+    DynamicImage,
+    RgbaImage,
+    GenericImageView
+};
+use std::fs::File;
+use std::io::Write;
+use anyhow::{
+    Result,
+    Error
+};
+
+use crate::errors::ImageError;
+use crate::errors::*;
+pub struct ImageData {
+    pub image: DynamicImage,
+    pub rgba: RgbaImage,
+    pub size: (u32, u32)
+}
+
+impl ImageData {
+    pub fn load_from_bytes(bytes: &[u8]) -> Result<Self, ImageError> { 
+        let image: DynamicImage = match image::load_from_memory(bytes) {
+            Ok(img) => img,
+            Err(e) => return Err(ImageError::LoadFromBytesError(e))
+        };
+
+        let rgba: RgbaImage = image.to_rgba8();
+        let size: (u32, u32) = image.dimensions();
+
+        Ok(ImageData {
+            image,
+            rgba,
+            size
+        })
+    }
+
+     pub fn load_from_bytes_vec(bytes: &Vec<u8>) -> Result<Self, Error> { 
+        let image: DynamicImage = match image::load_from_memory(bytes) {
+            Ok(img) => img,
+            Err(e) => bail!(ImageError::LoadFromBytesError(e))
+        };
+
+        let rgba: RgbaImage = image.to_rgba8();
+        let size: (u32, u32) = image.dimensions();
+
+        Ok(ImageData {
+            image,
+            rgba,
+            size
+        })
+    }
+
+pub fn load_no_tx(diffuse: [f32; 3]) -> Result<Self, Error> { 
+
+        // we create a temporary file for it
+        let mut rgb_str: String = "".to_string();
+        for value in diffuse {
+            rgb_str = format!("{} {}", rgb_str, value);
+        }
+
+        let mut start: String = "P3 1 1 255 ".to_string();
+
+        let mut data_file = File::create("data.txt").expect("creation failed"); 
+
+        start.push_str(&rgb_str[..]);
+
+        data_file.write(start.as_bytes());
+
+        let image: DynamicImage = match image::load_from_memory(bytes) {
+            Ok(img) => img,
+            Err(e) => return Err(ImageError::LoadFromBytesError(e))
+        };
+
+        let rgba: RgbaImage = image.to_rgba8();
+        let size: (u32, u32) = image.dimensions();
+
+        Ok(ImageData {
+            image,
+            rgba,
+            size
+        })
+    }
+
+    pub fn load_from_name(name: &str) -> Result<Self, Error> { 
+        let data = std::fs::read(name)?;
+       //let image: DynamicImage = match image::open(name) {
+        //        Ok(i) => i,
+         //       Err(e) => bail!(ImageError::OpenImageError(e))
+        //};
+        let image: DynamicImage = match image::load_from_memory(&data) {
+            Ok(img) => img,
+            Err(e) => bail!(ImageError::LoadFromBytesError(e))
+        };
+
+        let rgba: RgbaImage = image.to_rgba8();
+        let size: (u32, u32) = image.dimensions();
+
+        Ok(ImageData {
+            image,
+            rgba,
+            size
+        })
+
+    }
+}

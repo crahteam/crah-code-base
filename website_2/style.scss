@@ -1,0 +1,241 @@
+// RESET (from meyerweb.com)
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+// VARIABLES
+// NOTE: variables and styles are deisigned for mobile and should
+// be updated for desktop
+$content-width: 80vw;
+$header-height: 10vh;
+$text-size: 18px;
+$text-width: 100%;
+$background-color: #ffffff;
+$thirth-color: #ffffff;
+$primary-color: #000000;
+$secondary-color: #ff0000;
+$header-margin: 10vh;
+$footer-margin: 10vh;
+// a general margin between containers like grids, text-boxes etc...
+$box-margin: 10vh;
+
+// GENERAL STYLING
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  font-size: $text-size;
+  display: flex-box;
+  max-width: 100%;
+}
+
+main {
+  display: flex-box;
+  width: $content-width;
+  margin: auto;
+  z-index: 0;
+}
+
+header {
+  //margin-bottom: $header-margin;
+}
+
+footer {
+  margin-top: $footer-margin;
+}
+
+p, li {
+  color: $primary-color;
+}
+h1 {
+  font-size: 1.3rem;
+  color: $secondary-color;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: $secondary-color;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: $secondary-color;
+}
+
+a,p,li {
+  font-size: $text-size;
+}
+
+// USEFUL MODIFIERS
+.p--margin {
+  margin-bottom: 2.5rem;
+}
+
+//.title--margin {
+//  margin-bottom: 2.5rem;
+//}
+
+// pretty much applicable to whatever you want,
+// but designed to be used for .window-box
+// low refers to the opacity level.
+.translucent-dark-low {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.translucent-dark-high {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.title--color {
+  
+}
+
+.list--no-bullets {
+  list-style-type: none;
+}
+
+.grid--1-column {
+  grid-template-columns: 1fr;
+  gaps: 10vh;
+}
+
+.grid--3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+  gaps: 10%;
+}
+
+.grid--5-columns {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gaps: 10%;
+}
+
+// ELEMENTS
+// ELEMENTS AND CONTAINERS
+// the width is 100% becuase its supposed to be placed
+// inside main(which has width = content-width)
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+}
+
+.background-wrapper {
+  position: relative;
+  display: flex;  
+  max-width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.window-box {
+  width: 100%;
+  padding: 10vw;
+}
+
+.text-box {
+  width: $text-width;
+  margin: auto;
+  margin-bottom: $box-margin;
+  text-align: left;
+}
+// the h1,h2 ...
+.text-box__title {
+  margin-bottom: 2.5rem;
+}
+
+// the p
+.text-box__content {
+  
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  margin-bottom: $box-margin;
+}
+
+.logo {
+  height: 10vh;
+  padding: 5vh;
+}
+
+
+// HEADER AND FOOTER
+
+header {
+  background-color: $primary-color;
+  ul {
+    display: none;
+  }
+}
+
+// Home specific
+
+.video-background {
+  position: absolute;  
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.translucent-dark-low {
+  background: $background-color;  
+}
+
+
+.text-box--landing-center {
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+}

@@ -1,0 +1,195 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 18px;
+  display: flex-box;
+  max-width: 100%;
+}
+
+main {
+  display: flex-box;
+  width: 80vw;
+  margin: auto;
+  z-index: 0;
+}
+
+footer {
+  margin-top: 10vh;
+}
+
+p, li {
+  color: #000000;
+}
+
+h1 {
+  font-size: 1.3rem;
+  color: #ff0000;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #ff0000;
+}
+
+a, p, li {
+  font-size: 18px;
+}
+
+.p--margin {
+  margin-bottom: 2.5rem;
+}
+
+.translucent-dark-low {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.translucent-dark-high {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.list--no-bullets {
+  list-style-type: none;
+}
+
+.grid--1-column {
+  grid-template-columns: 1fr;
+  gaps: 10vh;
+}
+
+.grid--3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+  gaps: 10%;
+}
+
+.grid--5-columns {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gaps: 10%;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+}
+
+.background-wrapper {
+  position: relative;
+  display: flex;
+  max-width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.window-box {
+  width: 100%;
+  padding: 10vw;
+}
+
+.text-box {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10vh;
+  text-align: left;
+}
+
+.text-box__title {
+  margin-bottom: 2.5rem;
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10vh;
+}
+
+.logo {
+  height: 10vh;
+  padding: 5vh;
+}
+
+header {
+  background-color: #000000;
+}
+header ul {
+  display: none;
+}
+
+.video-background {
+  position: absolute;
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.translucent-dark-low {
+  background: #ffffff;
+}
+
+.text-box--landing-center {
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+}
+
+/*# sourceMappingURL=style.css.map */

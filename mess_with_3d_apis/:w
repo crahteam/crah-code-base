@@ -1,0 +1,5 @@
+use thiserror::Error;
+
+#[derive(Error, Debug)]
+#[error("No adapters were found for the current instance.")]
+pub struct<E> AdapterError(E);
